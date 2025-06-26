@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Code, LogOut, User } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
-import AuthModal from './AuthModal';
+import React, { useState } from "react";
+import { Code, LogOut, User } from "lucide-react";
+import { useAuth } from "../hooks/useAuth";
+import AuthModal from "./AuthModal";
 
 const Header: React.FC = () => {
   const { user, profile, signOut } = useAuth();
@@ -20,8 +20,12 @@ const Header: React.FC = () => {
               <Code className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Python学習支援システム</h1>
-              <p className="text-sm text-gray-600">GCI講座 - コード改善アドバイスツール</p>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Python学習支援システム
+              </h1>
+              <p className="text-sm text-gray-600">
+                コード改善アドバイスツール
+              </p>
             </div>
           </div>
 
@@ -31,7 +35,7 @@ const Header: React.FC = () => {
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <User className="w-4 h-4" />
                   <span>{profile?.display_name || profile?.email}</span>
-                  {profile?.role === 'admin' && (
+                  {profile?.role === "admin" && (
                     <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
                       管理者
                     </span>
@@ -57,9 +61,9 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      <AuthModal 
-        isOpen={showAuthModal} 
-        onClose={() => setShowAuthModal(false)} 
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
       />
     </header>
   );
